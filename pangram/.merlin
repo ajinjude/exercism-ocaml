@@ -1,0 +1,18 @@
+EXCLUDE_QUERY_DIR
+B /home/ajin/.opam/default/lib/base
+B /home/ajin/.opam/default/lib/base/caml
+B /home/ajin/.opam/default/lib/base/shadow_stdlib
+B /home/ajin/.opam/default/lib/bytes
+B /home/ajin/.opam/default/lib/oUnit
+B /home/ajin/.opam/default/lib/ocaml
+B /home/ajin/.opam/default/lib/sexplib0
+B ../../../_build/default/exercism/ocaml/pangram/.test.eobjs/byte
+S /home/ajin/.opam/default/lib/base
+S /home/ajin/.opam/default/lib/base/caml
+S /home/ajin/.opam/default/lib/base/shadow_stdlib
+S /home/ajin/.opam/default/lib/bytes
+S /home/ajin/.opam/default/lib/oUnit
+S /home/ajin/.opam/default/lib/ocaml
+S /home/ajin/.opam/default/lib/sexplib0
+S .
+FLG -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs
