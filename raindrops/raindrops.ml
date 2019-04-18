@@ -1,5 +1,3 @@
-open Base
-
 let raindrop num =
   let check n = num % n = 0 in
   match (check 3, check 5, check 7) with
