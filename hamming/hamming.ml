@@ -10,8 +10,6 @@ let equal (x,y) =
   | _ -> false
 
 let hamming_distance strand1 strand2 =
-  let zipped = List.zip strand1 strand2
-  in
-    match zipped with
-    | None -> None
-    | Some xs -> Some (List.count ~f:(fun x -> not(equal x)) xs)
+  match List.zip strand1 strand2 with
+  | None -> None
+  | Some xs -> Some (List.count ~f:(fun x -> not(equal x)) xs)
