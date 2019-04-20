@@ -1,0 +1,8 @@
+(executable
+ (name test)
+ (libraries core base oUnit))
+
+(alias
+  (name    runtest)
+  (deps    (:x test.exe))
+  (action  (run %{x})))
