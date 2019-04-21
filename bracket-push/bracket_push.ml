@@ -2,7 +2,7 @@ open Base
 open Base.Poly
 
 let clean str =
-let is_bracket x = x = '(' || x = '[' || x = '{' || x = ')' || x = ']' || x = '}' in
+  let is_bracket = function '(' | '[' | '{' | ')' | ']' | '}' -> true | _ -> false in 
   String.filter ~f: is_bracket str |> String.to_list
 
 let pop bracket stack =
