@@ -1,4 +1,3 @@
-
 open Base
 
 let bottles = function
@@ -7,10 +6,9 @@ let bottles = function
   | x -> Int.to_string x ^ " bottles"
 
 let on_wall x =
-  let bottles = bottles x in
-  match x with
-  | 0 -> String.concat [String.capitalize bottles; " of beer on the wall, "; bottles; " of beer.\n"]
-  | _ -> String.concat [bottles; " of beer on the wall, "; bottles; " of beer.\n"]
+  let bottle = bottles x in
+  let bottles = if x = 0 then String.capitalize bottle else bottle in
+  String.concat [bottles; " of beer on the wall, "; bottle; " of beer.\n"]
 
 let action x =
   let it = if x = 1 then "it" else "one" in
@@ -20,6 +18,4 @@ let action x =
 
 let verse x = on_wall x ^ action x
 
-let lyrics ~from ~until =
-  let range = List.range until (from + 1) in
-  List.rev_map range ~f: verse |> String.concat ~sep: "\n"
+let lyrics ~from ~until = List.range until (from + 1) |> List.rev_map ~f: verse |> String.concat ~sep: "\n"
