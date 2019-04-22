@@ -9,15 +9,14 @@ let bottles = function
 let on_wall x =
   let bottles = bottles x in
   match x with
-  | 0 -> String.capitalize bottles ^ " of beer on the wall, " ^ bottles ^ " of beer.\n"
-  | _ -> bottles ^ " of beer on the wall, " ^ bottles ^ " of beer.\n"
+  | 0 -> String.concat [String.capitalize bottles; " of beer on the wall, "; bottles; " of beer.\n"]
+  | _ -> String.concat [bottles; " of beer on the wall, "; bottles; " of beer.\n"]
 
 let action x =
   let it = if x = 1 then "it" else "one" in
   match x with
   | 0 -> "Go to the store and buy some more, 99 bottles of beer on the wall.\n"
-  | _ -> "Take " ^ it ^ " down and pass it around, " ^ bottles (x - 1) ^ " of beer on the wall.\n"
-
+  | _ -> String.concat ["Take "; it; " down and pass it around, "; bottles (x - 1); " of beer on the wall.\n"]
 
 let verse x = on_wall x ^ action x
 
