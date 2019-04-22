@@ -7,9 +7,10 @@ let bottles = function
   | x -> Int.to_string x ^ " bottles"
 
 let on_wall x =
+  let bottles = bottles x in
   match x with
-  | 0 -> String.capitalize (bottles x) ^ " of beer on the wall, " ^ bottles x ^ " of beer.\n"
-  | _ -> bottles x ^ " of beer on the wall, " ^ bottles x ^ " of beer.\n"
+  | 0 -> String.capitalize bottles ^ " of beer on the wall, " ^ bottles ^ " of beer.\n"
+  | _ -> bottles ^ " of beer on the wall, " ^ bottles ^ " of beer.\n"
 
 let action x =
   let it = if x = 1 then "it" else "one" in
